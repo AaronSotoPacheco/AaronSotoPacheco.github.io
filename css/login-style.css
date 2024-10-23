@@ -93,16 +93,6 @@ button {
     cursor: pointer;
   
 }
-.othersR{width: 100%;
-   margin-top: 20px;
-    padding: 10px;
-    font-size: 1.2rem;
-    background-color: #f10e0e;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  .othersR:hover{background-color: #660202;}
 
 button:hover {
     background-color: #bbb;
