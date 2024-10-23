@@ -28,9 +28,10 @@
     }
 
     .content {
-        margin-left: 50px;
+        margin-left: 40px;
         padding: 10px;
-        width: calc(100% - 60px);
+        width: calc(100% - 50px);
+
     }
 
     .tournaments-container {
