@@ -32,13 +32,13 @@ body {
 }
 
 .asidebar li {
-  width: 100%;
     margin: 0;
     padding: 15px;
 }
 
 .asidebar img {
-    
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: #fff;
     padding: 12px;
