@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Login page">
     <title>Login</title>
+    <link rel="stylesheet" href="css/media-query-login.css">
     <link rel="stylesheet" href="css/login-style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -27,17 +28,24 @@
                     <input type="email" id="email" placeholder="example@gmail.com">
                 </div><!--FIN DE INPUT-->
 
-                <label for="password">Contraseña</label>
+                <label for="password">Password</label>
                 <div class="inputs"><!--input-->
 
                     <input type="password" id="password" placeholder="*******">
                 </div><!--FIN INPUT-->
 
                 <button type="active">Login</button><!--boton login-->
-                
-            </form>
-            <p>do you don't have an account? <a href="./register.html">Register Now<a></p>
+                 <p>do you don't have an account? <a href="./register.html">Register Now<a></p>
+                    <br><br>
+                    <label for="Social Login">You can Login with</label>
+
+                        <button class="google-btn">Login with Google</button>
+                       
+                        <button class="facebook-btn">Login with Facebook</button>
+                 
           
+            </form>
+           
         </div><!--FIN LOGIN-->
 
     </div><!---Fin del Contenedor-->

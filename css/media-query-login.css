@@ -1,0 +1,43 @@
+
+@media (max-width: 768px) {
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .login-body {
+        width: 100%;
+        max-width: 350px;
+        padding: 20px;
+    }
+
+
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+   
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+     
+
+    .google-btn,
+    .facebook-btn {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .image img {
+        display: none; 
+    }
+}
