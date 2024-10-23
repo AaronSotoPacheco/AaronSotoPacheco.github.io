@@ -23,17 +23,22 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    
 }
 
 .asidebar ul {
     list-style: none;
-    padding: 0;
+    width: 65px;
+    height: 65px;
   
 }
 
 .asidebar li {
-    margin: 0;
-    padding: 15px;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    object-fit: contain;
+    margin-bottom: 100%;
 }
 
 .asidebar img {
@@ -41,7 +46,8 @@ body {
     height: 100%;
     border-radius: 50%;
     background-color: #fff;
-    padding: 12px;
+    object-fit: contain;
+   padding: 5px;
 }
 
 
