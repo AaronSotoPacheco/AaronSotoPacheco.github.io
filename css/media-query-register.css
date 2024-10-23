@@ -1,4 +1,5 @@
 @media (max-width: 768px) {
+    
     .registration-form{
         width: 100%;
         margin: 0 auto;
@@ -8,7 +9,7 @@
  
     .header{
         display: flex;
-        width: 100%;
+        width: 50%;
     }
    
 
