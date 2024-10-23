@@ -3,7 +3,9 @@
         width: 90%;
         margin: 0 auto;
         padding: 20px;
+        display: block;
     }
+    
 
  
     input[type="text"], input[type="email"], input[type="password"] {
