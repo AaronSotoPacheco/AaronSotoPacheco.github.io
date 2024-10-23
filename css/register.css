@@ -27,6 +27,7 @@ body {
     border-radius: 15px;
     padding: 45px;
     width: 60%;
+    height: 100%;
     position: relative;
     font-family: 'Georgia', serif;
 }
