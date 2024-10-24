@@ -10,13 +10,13 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px;
+     
     }
 
     .login-body {
         width: 100%;
         max-width: 350px;
-        padding: 20px;
+        
     }
 
 
