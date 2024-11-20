@@ -1,3 +1,4 @@
+const ctx1 = document.getElementById('chartIngresos');
 new Chart(ctx1, {
     type: 'line',
     data: {
