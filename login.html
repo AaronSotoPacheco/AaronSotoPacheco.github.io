@@ -21,20 +21,20 @@
                <a href="main-page.html" aria-label="close"><span class="close-btn"><i class="fa fa-times-circle" aria-hidden="true"></i></span></a><!--LINK LANDING PAGE-->
             </div><!--FIN CLOSE-->
             <H1>Welcome<br>To MatchUP</H1><!--Titulo-->
-            <form class="login-body">
+            <form class="login-body" action="./php/login.php" method="post">
                 <label for="email">EMAIL</label>
                 <div class="inputs"><!--input-->
 
-                    <input type="email" id="email" placeholder="example@gmail.com">
+                    <input type="text" id="email" name="email" placeholder="example@gmail.com">
                 </div><!--FIN DE INPUT-->
 
-                <label for="password">Password</label>
+                <label for="Password">Password</label>
                 <div class="inputs"><!--input-->
 
-                    <input type="password" id="password" placeholder="*******">
+                    <input type="password" name="txtPassword" id="password" placeholder="*******">
                 </div><!--FIN INPUT-->
 
-                <button type="active">Login</button><!--boton login-->
+                <button type="submit">Login</button><!--boton login-->
                  <p>do you don't have an account? <a href="./register.html">Register Now<a></p>
                     <br><br>
                     <label for="Social Login">You can Login with</label>
