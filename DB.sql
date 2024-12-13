@@ -91,6 +91,8 @@ STATUS VARCHAR (20))
 
 select * from PAYMENT
 
+
+--TRIGGER
 CREATE TABLE CONTROL_TOURNAMENT(ID_TOURNAMENT INT AUTO_INCREMENT PRIMARY KEY,
 MENSAJE VARCHAR(30), 
 FECHA DATE)
@@ -105,4 +107,33 @@ BEGIN
 END
 
 
+--procedimiento almacenado
+CREATE PROCEDURE RegisterUserToTournament (
+    IN p_ID_USER INT,
+    IN p_ID_TOURNAMENT INT,
+    OUT p_RESULT_MESSAGE VARCHAR(255)
+)
+BEGIN
+    -- Verificar si el torneo y el usuario existen
+    IF NOT EXISTS (SELECT 1 FROM TOURNAMENT WHERE ID_TOURNAMENT = p_ID_TOURNAMENT) THEN
+        SET p_RESULT_MESSAGE = 'El torneo no existe.';
+        LEAVE PROCEDURE;
+    END IF;
+
+    IF NOT EXISTS (SELECT 1 FROM USERS WHERE ID_USER = p_ID_USER) THEN
+        SET p_RESULT_MESSAGE = 'El usuario no existe.';
+        LEAVE PROCEDURE;
+    END IF;
+
+    -- Insertar registro en la tabla INSCRIPTION
+    INSERT INTO INSCRIPTION (ID_USER, ID_TOURNAMENT)
+    VALUES (p_ID_USER, p_ID_TOURNAMENT);
+
+    -- Insertar el pago correspondiente
+    INSERT INTO PAYMENT (ID_TOURNAMENT, PAY, COST_VENUE, ID_USER, PAY_DATE, PAY_METHOD, TAX_AMOUNT, DISCOUNT, STATUS)
+    VALUES (p_ID_TOURNAMENT, 50.00, 10.00, p_ID_USER, CURDATE(), 'Tarjeta de Crédito', 5.00, 0.00, 'Completado');
+
+    -- Enviar un mensaje de éxito
+    SET p_RESULT_MESSAGE = 'Usuario registrado exitosamente y pago generado.';
+END
 
