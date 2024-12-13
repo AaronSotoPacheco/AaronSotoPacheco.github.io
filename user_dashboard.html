@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard MatchUP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark">
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main-page.html">MatchUP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Torneos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ranking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perfil</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-md-3 col-lg-2 bg-light p-3 bg-dark">
+                <h5 class="text-center text-white">Menú</h5>
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark"><a href="#">Resumen</a></li>
+                    <li class="list-group-item bg-dark"><a href="#">Torneos Activos</a></li>
+                    <li class="list-group-item bg-dark"><a href="#">Historial</a></li>
+                    <li class="list-group-item bg-dark"><a href="#">Calendario</a></li>
+                    <li class="list-group-item bg-dark"><a href="#">Configuración</a></li>
+                </ul>
+            </aside>
+
+            <!-- Contenido -->
+            <main class="col-md-9 col-lg-10">
+                <h2 class="mb-4 text-white">Dashboard</h2>
+                <!-- Tarjetas de resumen -->
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card text-white bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Torneos Activos</h5>
+                                <p class="card-text fs-4">5</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-white bg-success">
+                            <div class="card-body">
+                                <h5 class="card-title">Partidas Jugadas</h5>
+                                <p class="card-text fs-4">42</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-white bg-warning">
+                            <div class="card-body">
+                                <h5 class="card-title">Ranking Global</h5>
+                                <p class="card-text fs-4">#12</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabla de torneos -->
+                <h3 class="mt-5 text-white">Torneos Activos</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-white">#</th>
+                            <th class="text-white">Nombre del Torneo</th>
+                            <th class="text-white">Juego</th>
+                            <th class="text-white">Estado</th>
+                            <th class="text-white">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-white">1</td>
+                            <td class="text-white">Torneo Apex Legends</td>
+                            <td class="text-white">Apex Legends</td>
+                            <td class="text-white">En curso</td>
+                            <td class="text-white"><button class="btn btn-sm btn-primary">Ver detalles</button></td>
+                        </tr>
+                        <tr>
+                            <td class="text-white">2</td>
+                            <td class="text-white">Torneo Valorant</td>
+                            <td class="text-white">Valorant</td>
+                            <td class="text-white">Inscripción abierta</td>
+                            <td><button class="btn btn-sm btn-success" >Editar </button> 
+                                
+                                <div class="modal fade modal-lg" id="modalAdd" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar usuarios</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <form action="./php/user_insert.php" method="post" class="needs-validation" novalidate id="form">
+                                        <div class="modal-body">
+                                          <div class="row">
+                                            <div class="col-6 mb-2">
+                                              <label for="">Name</label>
+                                              <input name="txtname" required type="text" class="form-control" placeholder="Inserta el nombre">  
+                                               <div class="valid-feedback">Looks good!</div>
+                                               <div class="invalid-feedback">Looks good!</div>
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                              <label for="">Last</label>
+                                              <input name="Last" required type="text" class="form-control" placeholder="Inserta el Apeliido">
+                                              <div class="valid-feedback">Looks good!</div>
+                                              <div class="invalid-feedback">Looks good!</div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-4 mb-2">
+                                              <label for="">Age</label>
+                                              <input name="txtEdad" required type="number" class="form-control" placeholder="Inserta tu edad">
+                                              <div class="valid-feedback">Looks good!</div>
+                                              <div class="invalid-feedback">Looks good!</div>
+                                            </div>
+                                            <div class="col-4 mb-2">
+                                              <label for="">Height (cm)</label>
+                                              <input name="txtAltura" required type="number" class="form-control" placeholder="Inserta tu estatura">
+                                              <div class="valid-feedback">Looks good!</div>
+                                              <div class="invalid-feedback">Looks good!</div>
+                                            </div>
+                            
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-12 mb-2">
+                                              <label for="">Email</label>
+                                              <input name="txtEmail" required type="email" class="form-control" placeholder="Email">
+                                              <div class="valid-feedback">Looks good!</div>
+                                              <div class="invalid-feedback">Looks good!</div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-6 mb-2">
+                                              <label for="">Password</label>
+                                              <input name="txtPass" required type="password" class="form-control" placeholder="Password">
+                                              <div class="valid-feedback">Looks good!</div>
+                                              <div class="invalid-feedback">Looks good!</div>
+                                            </div>
+                                            <div class="col-6 mb-2">
+                                              <label  for="">Confirm Password</label>
+                                              <input name="txtCPass" required type="password" class="form-control" placeholder="Confirm Password">
+                                            </div>
+                                          </div>
+                            
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                          <button type="submit" class="btn btn-primary" id="btnSafe">Save changes</button>
+                                        </div>
+                            
+                                      </form>
+                            
+                                    </div>
+                                  </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

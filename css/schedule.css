@@ -1,0 +1,24 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+        .calendar-cell {
+            height: 120px;
+            border: 1px solid #dee2e6;
+            vertical-align: top;
+        }
+        .calendar-cell h6 {
+            margin: 5px;
+            font-size: 0.9rem;
+        }
+        .event {
+            font-size: 0.85rem;
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            padding: 3px;
+            border-radius: 5px;
+        }
+        body {
+            background-color: #111;
+        }

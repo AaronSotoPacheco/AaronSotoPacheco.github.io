@@ -15,39 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
  <!--SIDEBAR-->
- <aside class="bg-dark text-white vh-100" style="width: 20%;">
-    <h2 class="p-4 h4">
-
-      <a href="main-page.html"><img width="30px" src="img/logo_size_invert.webp" class="mx-1" style="border-radius: 30px;"></a>
-      MatchUP
-    </h2>
-    <ul class="nav flex-column mt-5">
-    <a href="./main-page.html"></a>  <li class="nav-item h5 mx-2"><a href="user_dashboard.html" class="nav-link text-white"><i class="bi bi-house"></i>&nbsp; Inicio</a>
-      </li>
-      <li class="nav-item h5 mx-2"><a href="" class="nav-link text-white"><i class="bi bi-calendar4-event"></i>&nbsp;
-          Torneos</a>
-      </li>
-      <li class="nav-item h5 mx-2"><a href="" class="nav-link text-white"><i class="bi bi-person-circle"></i>&nbsp;
-          Usuario</a>
-      </li>
-      <li class="nav-item h5 mx-2"><a href="" class="nav-link text-white"><i class="bi bi-joystick"></i></i>&nbsp;
-        Eventos</a> </li>
-      
-    </ul>
-  </li>
-<body>
-  <!-- <aside class="asidebar">
-        <ul>
-            <li><img src="img/logo_size_invert.webp" alt="Icon 1"></li>
-            <li><img src="img/search_icon.webp" alt="Search"></i></li>
-            <li><img src="img/compass_icon.webp" alt="Compass"></li>
-            <li><img src="img/add_icon.webp" alt="Notify"></li>
-            
-            <li> <a href="login.html"> <img src="img/user_icon.webp" alt="User"> -->
-           
-        </ul>
-    </aside><!--FIN DEL ASIDE -->
-
+<?php include "./layout/aside.php"
+?>
     <header class="header">
        <h1>MatchUp</h1>
         <p>Competitive community</p>

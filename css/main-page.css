@@ -90,10 +90,10 @@ background-color: 	#73C2FB;
 
 
 .content {
-    margin-top: 100px;
-margin-left: 65px;
+    margin-top: 50px;
+margin-left: 5px;
     padding: 20px;
-    width: calc(100%-65px);
+    
 }
 
 .tournaments-section {
