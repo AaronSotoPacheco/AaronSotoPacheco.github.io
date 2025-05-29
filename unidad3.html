@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/unidades.css">
+  <title>Esquemas de Traducción y Análisis Semántico</title>
+  
+</head>
+<body>
+  <header>
+    <h1>Unidad III: Optmizacion</h1>
+    <p>Compiladores · Lenguajes · Semántica</p>
+  </header>
+
+  <main>
+  <section class="card">
+  <h3>¿Qué es la Optimización?</h3>
+  <p>
+    La optimización busca mejorar el rendimiento del código, reduciendo el uso de recursos o aumentando la velocidad de ejecución. Puede aumentar el tiempo de compilación, pero genera programas más eficientes y robustos.
+  </p>
+</section>
+
+<section class="card">
+  <h3>Tipos de Optimización</h3>
+  <ul>
+    <li><strong>Optimización Local:</strong> Se aplica a funciones o métodos específicos, ideal para bloques críticos como E/S o concurrencia.</li>
+    <li><strong>Optimización de Ciclos:</strong> Mejora bucles evitando operaciones innecesarias repetidas.</li>
+    <li><strong>Optimización Global:</strong> Abarca todo el código. Aunque más lenta, mejora el desempeño general.</li>
+    <li><strong>Optimización de Mirilla:</strong> Reorganiza el flujo del programa optimizando instrucciones de control como saltos y decisiones.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h3>Costos de la Optimización</h3>
+  <p>
+    Optimizar puede ser costoso en tiempo de desarrollo. Es importante evaluar si los beneficios en rendimiento justifican estos costos, especialmente en secciones críticas como ciclos.
+  </p>
+</section>
+
+<section class="card">
+  <h3>Costo de Ejecución</h3>
+  <p>
+    Se refiere al uso de memoria, registros y velocidad del procesador. Es crucial en videojuegos y dispositivos móviles, donde los recursos son limitados. En estos casos, es preferible usar arquitecturas como cliente-servidor para distribuir la carga.
+  </p>
+</section>
+
+<section class="card">
+  <h3>Criterios de Mejora y Herramientas</h3>
+  <p>
+    Es ideal escribir código optimizado desde el inicio, aunque esto puede implicar más esfuerzo. Se pueden usar directivas del compilador o herramientas como depuradores y desensambladores para analizar y mejorar el flujo de datos.
+  </p>
+  <img src="img/optimizacion.jpg" alt="optimizacion" style="display: block; margin: 20px auto; width: 200px;">
+</section>
+
+    <div style="text-align: center; margin: 20px;">
+        <button onclick="window.location.href='unidad2.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Unidad anterior
+    </button>
+    <button onclick="window.location.href='index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Volver a las unidades
+    </button>
+    <button onclick="window.location.href='unidad4.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Siguiente unidad
+    </button>
+  </div>
+  </main>
+  <script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+</body>
+</html>

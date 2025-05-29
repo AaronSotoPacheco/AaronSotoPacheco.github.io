@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="stylesheet" href="css/style.css">
+  <title>Lenguajes y Automatas II</title>
+
+</head>
+<body>
+  <header>
+    <h1>Lenguajes y Automatas II</h1>
+          
+  </header>
+
+  <main>
+    <div class="contenedor">
+      <div class="card" data-url="unidad1.html">
+        <img src="img/unidad1.png" alt="Unidad 1">
+        <div class="card-content">
+          <h3>Unidad I: Análisis semántico.</h3>
+          <p>Esta unidad se centra en verificar el significado del código fuente después de que ha sido analizado sintácticamente. Aquí se asegura que las operaciones y estructuras tengan sentido según las reglas del lenguaje.</p>
+   
+        </div>
+      </div>
+
+      <div class="card" data-url="unidad2.html">
+        <img src="img/unidad2.png" alt="Unidad 2">
+        <div class="card-content">
+          <h3>Unidad II: Generación de código intermedio.</h3>
+          <p>Esta unidad se enfoca en cómo un compilador transforma el código fuente (ya analizado sintáctica y semánticamente) en una representación intermedia más cercana al código máquina, pero aún independiente de la arquitectura del procesador.</p>
+        </div>
+      </div>
+
+      <div class="card" data-url="unidad3.html">
+        <img src="img/unidad3.png" alt="Unidad 3">
+        <div class="card-content">
+          <h3>Unidad III: Casos Optimización.</h3>
+          <p>Esta etapa mejora el código intermedio o final para que sea más rápido, pequeño o eficiente en recursos, sin alterar su funcionalidad.</p>
+        </div>
+      </div>
+
+      <div class="card" data-url="unidad4.html">
+        <img src="img/unidad4.png" alt="Unidad 4">
+        <div class="card-content">
+          <h3>Unidad IV: Generación de código objeto.</h3>
+          <p> En esta etapa, el código intermedio se convierte en instrucciones ejecutables específicas del hardware. Se deben tener en cuenta las restricciones del procesador, como el número limitado de registros y la gestión de memoria.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => {
+        const url = card.getAttribute('data-url');
+        if (url) {
+          window.location.href = url;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

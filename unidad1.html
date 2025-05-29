@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/unidades.css">
+  <title>Esquemas de Traducción y Análisis Semántico</title>
+  
+</head>
+<body>
+  <header>
+    <h1>Unidad I: Análisis Semántico</h1>
+    <p>Compiladores · Lenguajes · Semántica</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h3>¿Qué es un Esquema de Traducción?</h3>
+      <p>
+        Un esquema de traducción es una gramática enriquecida con atributos y acciones semánticas que permite transformar código fuente en una representación intermedia o código destino. Se utilizan en compiladores para asegurar que un programa no solo sea sintácticamente correcto, sino también semánticamente coherente.
+      </p>
+      <ul>
+        <li><strong>Atributos Sintetizados:</strong> Se propagan desde los hijos hacia el nodo padre (por ejemplo, tipo de una expresión).</li>
+        <li><strong>Atributos Heredados:</strong> Se transmiten desde el nodo padre hacia los hijos (por ejemplo, el tipo esperado de una variable).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h3>Árboles de Expresiones</h3>
+      <p>
+        Son estructuras jerárquicas que representan operaciones y operandos de una expresión. Existen dos tipos principales:
+      </p>
+      <ul>
+        <li><strong>Árbol de Sintaxis Abstracta (AST):</strong> Representa la lógica del código omitiendo detalles sintácticos.</li>
+        <li><strong>Árbol de Sintaxis Concreta (CST):</strong> Incluye todos los elementos del lenguaje, útil para depuración.</li>
+      </ul>
+      <p>
+        Estos árboles son clave para validar semántica, optimizar código y generar instrucciones ejecutables.
+      </p>
+      <img src="img/arbolExpresion.png" alt="arbolExpresion" style="display: block; margin: 20px auto; width: 300px;">
+    </section>
+
+    <section class="card">
+      <h3>Tablas de Símbolos y Direcciones</h3>
+      <p>Estas estructuras son fundamentales en la compilación:</p>
+      <ul>
+        <li><strong>Tabla de Símbolos:</strong> Almacena información sobre identificadores (nombre, tipo, valor).</li>
+        <li><strong>Tabla de Direcciones:</strong> Registra las ubicaciones en memoria de variables y constantes.</li>
+      </ul>
+      <p>
+        Ambas ayudan a detectar errores, optimizar código y asegurar la coherencia del programa.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Manejo de Errores Semánticos</h3>
+      <p>
+        Aunque el código sea sintácticamente correcto, pueden surgir errores cuando su significado es inválido. Ejemplos:
+      </p>
+      <ul>
+        <li>Usar variables no declaradas.</li>
+        <li>Realizar operaciones entre tipos incompatibles (ej. sumar un número con una cadena).</li>
+        <li>Aplicar operadores de forma incorrecta.</li>
+      </ul>
+      <p>
+        El manejo adecuado de estos errores garantiza programas más robustos y confiables.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Pila Semántica</h3>
+      <p>
+        Durante el análisis sintáctico, se utiliza una pila semántica para almacenar atributos como valores, direcciones y tipos. Esta pila facilita la evaluación de expresiones y la construcción de estructuras intermedias, especialmente en analizadores tipo LR.
+      </p>
+       <img src="img/pilaSemantica.jfif" alt="pilaSemantica" style="display: block; margin: 20px auto; width: 300px;">
+    </section>
+  
+
+    <div style="text-align: center; margin: 20px;">
+    <button onclick="window.location.href='index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Volver a las unidades
+    </button>
+    <button onclick="window.location.href='unidad2.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Siguiente unidad
+    </button>
+  </div>
+  </main>
+  <script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+</body>
+</html>

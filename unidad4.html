@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/unidades.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+  <title>Esquemas de Traducción y Análisis Semántico</title>
+  
+</head>
+<body>
+  <header>
+    <h1>Unidad IV: Generación de Código Objeto</h1>
+    <p>Compiladores · Lenguajes · Semántica</p>
+  </header>
+
+  <main>
+<section class="card">
+  <h3>Registros</h3>
+  <p>
+    Son espacios de almacenamiento rápidos ubicados dentro del CPU. La asignación de registros implica decidir qué variables se guardan allí para mejorar el rendimiento.
+  </p>
+  <ul>
+    <li><strong>Estrategias:</strong> Se priorizan las variables más utilizadas.</li>
+    <li><strong>Problema:</strong> Cuando no hay suficientes registros, ocurre un <em>spill</em> o "derrame", y los datos deben almacenarse temporalmente en memoria.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h3>Lenguaje Ensamblador</h3>
+  <p>
+    Es una representación legible del código máquina. Cada instrucción tiene una correspondencia directa con operaciones de bajo nivel del procesador.
+  </p>
+  <p><strong>Ejemplo en x86 para <code>x = a + b</code>:</strong></p>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 8px;">
+    <code class="x86asm">
+MOV eax, [a]   ; Carga 'a' en el registro eax
+ADD eax, [b]   ; Suma 'b' a eax
+MOV [x], eax   ; Guarda el resultado en 'x'
+</code>
+
+  </pre>
+</section>
+
+<section class="card">
+  <h3>Lenguaje Máquina</h3>
+  <p>
+    Es el código binario que el procesador ejecuta directamente. Cada instrucción ensamblador tiene una traducción en lenguaje máquina (ej: <code>0x89 0xC3</code> para <code>MOV eax, ebx</code>).
+  </p>
+  <ul>
+    <li><strong>Ensamblador:</strong> Traduce instrucciones simbólicas a binario.</li>
+    <li><strong>Compilador:</strong> Traduce lenguajes de alto nivel a instrucciones en ensamblador.</li>
+  </ul>
+   <img src="img/maquina.webp" alt="pilaSemantica" style="display: block; margin: 20px auto; width: 300px;">
+</section>
+
+<section class="card">
+  <h3>Administración de Memoria</h3>
+  <p>La memoria se organiza en diferentes áreas con propósitos distintos:</p>
+  <ul>
+    <li><strong>Memoria Estática:</strong> Para variables globales y constantes.</li>
+    <li><strong>Pila (stack):</strong> Usada en llamadas a funciones, parámetros y variables locales.</li>
+    <li><strong>Heap:</strong> Para memoria dinámica, gestionada manualmente (ej. <code>malloc</code> en C).</li>
+  </ul>
+  <p><strong>Ejemplo en ensamblador de gestión de pila:</strong></p>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 8px;">
+  <code class="x86asm">
+PUSH ebp
+MOV ebp, esp
+SUB esp, 4     ; Reserva espacio para una variable local
+...
+MOV esp, ebp
+POP ebp
+RET
+  </code>
+
+  </pre>
+</section>
+  <section class="card">
+  <h3>Video complementario</h3>
+  <p style="text-align: center;">Este video te ayudará a reforzar todo sobre las 4 unidades de la materia.</p>
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px auto; max-width: 700px;">
+    <iframe 
+      src="https://www.youtube.com/embed/mRPArAeDH80" 
+      title="Video de análisis semántico" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    </iframe>
+  </div>
+</section>
+
+
+    <div style="text-align: center; margin: 20px;">
+         <button onclick="window.location.href='unidad3.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Unidad anterior
+    </button>
+    <button onclick="window.location.href='index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Volver a las unidades
+    </button>
+  </div>
+  </main>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/unidades.css">
+  <title>Esquemas de Traducción y Análisis Semántico</title>
+  
+</head>
+<body>
+  <header>
+    <h1>Unidad II:  Generación de Código Intermedio</h1>
+    <p>Compiladores · Lenguajes · Semántica</p>
+  </header>
+
+  <main>
+<section class="card">
+  <h3>Notaciones</h3>
+  <p>Son formas de representar expresiones para facilitar su evaluación y traducción:</p>
+  <ul>
+    <li><strong>Prefija (Notación Polaca):</strong> El operador va antes de los operandos. <em>Ej: + a b</em>. Elimina la necesidad de paréntesis y reglas de precedencia.</li>
+    <li><strong>Infija:</strong> Forma tradicional como <em>a + b * c</em>. Requiere paréntesis y reglas de precedencia.</li>
+    <li><strong>Postfija (Notación Polaca Inversa):</strong> El operador va después de los operandos. <em>Ej: a b +</em>. Usada en máquinas de pila como calculadoras HP.</li>
+  </ul>
+      <img src="img/notaciones.jpg" alt="pilaSemantica" style="display: block; margin: 20px auto; width: 300px;">
+</section>
+
+<section class="card">
+  <h3>Representaciones de Código Intermedio</h3>
+  <p>Formas estructuradas para facilitar la optimización y la generación de código final:</p>
+  <ul>
+    <li><strong>Triplos:</strong> (operador, operando1, operando2). Ej: <code>(+, a, b)</code> representa <code>a + b</code>. Limitado en reordenamiento.</li>
+    <li><strong>Cuádruplos:</strong> (operador, operando1, operando2, resultado). Ej: <code>(+, a, b, t1)</code>. Más flexible para optimizaciones.</li>
+    <li><strong>Código P:</strong> Basado en una pila abstracta. Ejemplo: <code>PUSH a, PUSH b, ADD</code>.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h3>Esquema de Generación: Expresiones</h3>
+  <p>Traducción de expresiones a cuádruplos:</p>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 8px;">
+(*, b, c, t1)
+(+, a, t1, t2)
+(=, t2, _, x)
+  </pre>
+</section>
+
+<section class="card">
+  <h3>Esquema de Generación: Estructuras de Control</h3>
+  <p>Se utilizan etiquetas y saltos condicionales. Ejemplo para <code>if (x > 0) { y = 1; }</code>:</p>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-radius: 8px;">
+(jleq, x, 0, L1)
+(=, 1, _, y)
+(label, L1, _, _)
+  </pre>
+</section>
+
+
+
+    <div style="text-align: center; margin: 20px;">
+         <button onclick="window.location.href='unidad1.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Unidad anterior
+    </button>
+    <button onclick="window.location.href='index.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Volver a las unidades
+    </button>
+    <button onclick="window.location.href='unidad3.html'" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+      Siguiente unidad
+    </button>
+  </div>
+  </main>
+  <script>
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.card').forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+</body>
+</html>
